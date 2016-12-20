@@ -1,0 +1,17 @@
+CoffeeBeans project info
+
+// This is a problem from my logic class, but I thought it would be cool to write a program to do it for you.
+
+prompt:
+
+- 1. Consider the following problem, which (following David Gries) we’ll call the coffee can problem: We have a coffee can that contains some white beans and some black beans. We perform the following operation on the beans: 
+- 
+- Until no further beans can be removed do: 
+- 1. Randomly choose two beans. 
+- 2. If the two beans are the same color, then throw both of them away and add a new black bean. 
+- 3. If the two beans are different colors, then throw away the black one and return the white one to the can.
+
+Planning:
+
+Future plans;
+I want to later try to add graphics with simple drawings, then even further add buttoms instead of typing b or w 
