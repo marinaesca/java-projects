@@ -1,6 +1,6 @@
 // marinaescalante-unfinished
 
-// still has errors, cannot run, mostly done
+// possibly unknown errors, 1st complete run, needs more debugging & adding ~pretty~ stuff
 
 /* planning
  * simulate beans w/  basic graphics (end game)
@@ -18,12 +18,14 @@ public class CoffeeBeansMain
 {
 	public static void main(String[] args)
 	{
+		// variables
 		Scanner keyboard = new Scanner(System.in);
 		String name = "";
 		CoffeeBeanCan coffeeCan;
 
 		name = intro(keyboard);
-		coffeeCan = createCan(keyboard);
+		int type = createCanIntro(keyboard);
+		coffeeCan = createCan(keyboard, type);
 
 		while (!coffeeCan.oneLeft())
 		{
@@ -51,7 +53,7 @@ public class CoffeeBeansMain
 		return name;
 	}
 
-	public static CoffeeBeanCan createCan(Scanner keyboard)
+	public static int createCanIntro(Scanner keyboard)
 	{
 		System.out.println();
 		System.out.println("Create your coffee bean can. You have 3 options, please type the number you want.");
@@ -61,7 +63,11 @@ public class CoffeeBeansMain
 		System.out.print("Type: ");
 
 		int type = getType(keyboard);
+		return type;
+	}
 
+	public static CoffeeBeanCan createCan(Scanner keyboard, int type)
+	{
 		CoffeeBeanCan temp;
 
 		if (type == 1)
@@ -85,45 +91,25 @@ public class CoffeeBeansMain
 			temp = new CoffeeBeanCan(black, white);
 		}
 
+		System.out.println();
 		return temp;
 	}
 
 	public static void drawBeans(Scanner keyboard, CoffeeBeanCan coffeeCan)
 	{
-		System.out.println();
-		System.out.println("New Turn. Press enter to continue.");
 
-		String ans = keyboard.nextLine();
+		System.out.print("Would you like to draw 2 beans? Type <y> and press enter to confirm. ");
+		String ans = keyboard.next();
+
 		while (!ans.equals("y"))
 		{
 			System.out.print("Would you like to draw 2 beans? Type <y> and press enter to confirm. ");
-			ans = keyboard.nextLine();
+			ans = keyboard.next();
+			System.out.println();
 		}
 
-		char[] beans = coffeeCan.drawBeans();
-		displayBeans(beans);
-	}
-
-	public static void displayBeans(char[] beans)
-	{
-		if (beans[0] == beans[1]) // same color
-		{
-			String color = "black";
-			if (beans[0] == 'w')
-			{
-				color = "white";
-			}
-
-			System.out.println("You drew two " + color + "beans!");
-			System.out.println("They were removed. A black bean was added.");
-		}
-
-		else // both colors
-		{
-			System.out.println("You drew a black bean and a white bean!");
-			System.out.println("The black bean was removed.");
-			System.out.println("The white bean was returned to the can.");
-		}
+		coffeeCan.drawBeans();
+		System.out.println();
 	}
 
 	public static void endGame(CoffeeBeanCan coffeeCan)
@@ -135,10 +121,11 @@ public class CoffeeBeansMain
 	public static int getType(Scanner keyboard)
 	{
 		int type = getNum(keyboard);
-		while (type < 0 || type > 4)
+		while (type != 1 && type != 2 && type != 3)
 		{
 			keyboard.nextLine();
-			System.out.println("Please enter a valid type (<1>, <2>, <3>).");
+			System.out.print("Please enter a valid type (<1>, <2>, <3>).");
+			type = getNum(keyboard);
 		}
 		return type;
 	}

@@ -1,6 +1,7 @@
-// marinaescalante-unfinished
+// marinaescalante-finished
 
-// go back and add in enums for black and white beans?
+// consider: enums, but for 2 colors ehhh
+// finished for now, can have upgrades for graphics
 
 package coffeeBeans;
 
@@ -26,10 +27,9 @@ public class CoffeeBeanCan
 		this.black = n;
 		this.white = size - n;
 		this.beans = setBeans();
-
 	}
 
-	// empty constructor creates a rando can
+	// constructor creates a rando can
 	// size is parameter
 	// colors are randomized
 	public CoffeeBeanCan(int size)
@@ -42,7 +42,7 @@ public class CoffeeBeanCan
 		this.beans = setBeans();
 	}
 
-	// empty constructor creates a rando can
+	// constructor creates a rando can
 	// size is white+black
 	// colors are parameters
 	public CoffeeBeanCan(int black, int white)
@@ -52,12 +52,12 @@ public class CoffeeBeanCan
 		this.beans = setBeans();
 	}
 
-	public int getWhite() // this will be for drawing/ display purposes
+	public int getWhite()
 	{
 		return this.white;
 	}
 
-	public int getBlack() // this will be for drawing/ display purposes
+	public int getBlack()
 	{
 		return this.black;
 	}
@@ -82,18 +82,18 @@ public class CoffeeBeanCan
 		return color;
 	}
 
-	// maybe disable as it later bc redundant and too much access
-	public char[] getBeans() // this may be for drawing/ display purposes
-	{
-		return this.beans;
-	}
+	//		// this may be used for drawing/ display purposes
+	//		public char[] getBeans()
+	//		{
+	//			return this.beans;
+	//		}
 
 	// simulates the drawing of 2 beans
 	// does the required methods
 	// returns a char with the colors of the beans drawn
-	public char[] drawBeans()
+	public void drawBeans()
 	{
-		char[] draw = createBeans();
+		char[] draw = drawTwoBeans();
 		char bean1 = draw[0];
 		char bean2 = draw[1];
 
@@ -101,7 +101,7 @@ public class CoffeeBeanCan
 		{
 			optionSameColor('b');
 		}
-		if (bean1 == 'w' && bean2 == 'w')
+		else if (bean1 == 'w' && bean2 == 'w')
 		{
 			optionSameColor('w');
 		}
@@ -110,14 +110,13 @@ public class CoffeeBeanCan
 			optionBothColor();
 		}
 
-		setBeans();
-		return draw;
+		this.beans = setBeans();
 	}
 
 	// b will be 0, w will be 1
-	public char[] createBeans()
+	public char[] drawTwoBeans()
 	{
-		char[] draw = { 'b', 'b' };
+		char[] draw = new char[2];
 
 		Random rand = new Random();
 
@@ -129,6 +128,7 @@ public class CoffeeBeanCan
 		{
 			m = rand.nextInt(this.beans.length);
 		}
+
 		draw[1] = this.beans[m];
 
 		return draw;
@@ -137,18 +137,23 @@ public class CoffeeBeanCan
 	// If the two beans are the same color, 
 	// then throw both of them away and add a new black bean. 
 	// translation: color subtract 2, black bean add 1
-	public void optionSameColor(char color)
+	public void optionSameColor(char c)
 	{
-		if (color == 'b')
+		String color = "black";
+		if (c == 'b')
 		{
 			this.black -= 2;
 		}
-		else //(color == 'w')
+		else //(c == 'w')
 		{
 			this.white -= 2;
+			color = "white";
 		}
 
 		this.black += 1;
+
+		System.out.println("You drew two " + color + " beans!");
+		System.out.println("They were removed. A black bean was added.");
 	}
 
 	// If the two beans are different colors, 
@@ -157,25 +162,28 @@ public class CoffeeBeanCan
 	public void optionBothColor()
 	{
 		this.black -= 1;
+
+		System.out.println("You drew one black bean and one white bean!");
+		System.out.println("The black bean was removed.");
+		System.out.println("The white bean was returned to the can.");
 	}
 
-	// may cause bounds issues, check for if beans are zero
 	public char[] setBeans()
 	{
 		int size = getBlack() + getWhite();
-		char[] beans = new char[size];
+		char[] temp = new char[size];
 
 		for (int b = 0; b < getBlack(); b++)
 		{
-			beans[b] = 'b';
+			temp[b] = 'b';
 		}
 
-		for (int w = getBlack(); w < beans.length; w++)
+		for (int w = getBlack(); w < size; w++)
 		{
-			beans[w] = 'w';
+			temp[w] = 'w';
 		}
 
-		return beans;
+		return temp;
 	}
 
 }
