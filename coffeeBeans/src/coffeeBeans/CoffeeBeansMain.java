@@ -24,14 +24,14 @@ public class CoffeeBeansMain
 		CoffeeBeanCan coffeeCan;
 
 		name = intro(keyboard);
-		int type = createCanIntro(keyboard);
+		int type = createCanIntro(keyboard, name);
 		coffeeCan = createCan(keyboard, type);
 
 		while (!coffeeCan.oneLeft())
 		{
-			drawBeans(keyboard, coffeeCan);
+			drawBeans(keyboard, coffeeCan, name);
 		}
-		endGame(coffeeCan);
+		endGame(coffeeCan, name);
 
 	}
 
@@ -43,24 +43,25 @@ public class CoffeeBeansMain
 		System.out.println("We have a coffee can that contains some white beans and some black beans. ");
 		System.out.println("Here are the rules:");
 		System.out.println("1. Randomly choose two beans. ");
-		System.out.println(
-				"2. If the two beans are the same color," + " then throw both of them away and add a new black bean. ");
-		System.out.println("3. If the two beans are different colors, then throw away the black one and "
-				+ "return the white one to the can.");
+		System.out.println("2. If the two beans are the same color,");
+		System.out.println(" then throw both of them away and add a new black bean. ");
+		System.out.println("3. If the two beans are different colors,");
+		System.out.println(" then throw away the black one and return the white one to the can.");
 		System.out.println();
 		System.out.print("What is your name? ");
 		String name = keyboard.nextLine();
 		return name;
 	}
 
-	public static int createCanIntro(Scanner keyboard)
+	public static int createCanIntro(Scanner keyboard, String name)
 	{
 		System.out.println();
-		System.out.println("Create your coffee bean can. You have 3 options, please type the number you want.");
+		System.out.println(name + ", it is time to create your coffee bean can.");
+		System.out.println("You have 3 options, please type the number you want.");
 		System.out.println("Create a random can for me. <1>");
 		System.out.println("Enter the total amount of random colored beans you want. <2>");
 		System.out.println("Enter specific white and black bean values. <3>");
-		System.out.print("Type: ");
+		System.out.print(name + ", what type do you chose? ");
 
 		int type = getType(keyboard);
 		return type;
@@ -95,15 +96,17 @@ public class CoffeeBeansMain
 		return temp;
 	}
 
-	public static void drawBeans(Scanner keyboard, CoffeeBeanCan coffeeCan)
+	public static void drawBeans(Scanner keyboard, CoffeeBeanCan coffeeCan, String name)
 	{
 
-		System.out.print("Would you like to draw 2 beans? Type <y> and press enter to confirm. ");
+		System.out.println(name + ", would you like to draw 2 beans?");
+		System.out.print("Type <y> and press enter to confirm. ");
 		String ans = keyboard.next();
 
 		while (!ans.equals("y"))
 		{
-			System.out.print("Would you like to draw 2 beans? Type <y> and press enter to confirm. ");
+			System.out.println(name + ", would you like to draw 2 beans?");
+			System.out.print("Type <y> and press enter to confirm. ");
 			ans = keyboard.next();
 			System.out.println();
 		}
@@ -112,10 +115,11 @@ public class CoffeeBeansMain
 		System.out.println();
 	}
 
-	public static void endGame(CoffeeBeanCan coffeeCan)
+	public static void endGame(CoffeeBeanCan coffeeCan, String name)
 	{
+		System.out.println(name + ", you won!");
 		System.out.println("There is one bean left!");
-		System.out.println("The last bean's color is " + coffeeCan.getLastBean());
+		System.out.println("The last bean's color is " + coffeeCan.getLastBean() + ".");
 	}
 
 	public static int getType(Scanner keyboard)
@@ -124,7 +128,7 @@ public class CoffeeBeansMain
 		while (type != 1 && type != 2 && type != 3)
 		{
 			keyboard.nextLine();
-			System.out.print("Please enter a valid type (<1>, <2>, <3>).");
+			System.out.print("Please enter a valid type (<1>, <2>, <3>). ");
 			type = getNum(keyboard);
 		}
 		return type;
