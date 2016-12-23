@@ -1,6 +1,6 @@
 CoffeeBeans project info
 
-// This is a problem from my logic class, but I thought it would be cool to write a program to do it for you.
+// This is a problem from my logic class, but I thought it would be cool to write a program to solve it.
 
 prompt:
 
@@ -14,4 +14,4 @@ prompt:
 Planning:
 
 Future plans;
-I want to later try to add graphics with simple drawings, then even further add buttoms instead of typing b or w 
+I want to later try to add graphics with simple drawings. Another possible plan is to add buttons for the draw process.
