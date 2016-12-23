@@ -8,8 +8,6 @@
  * randomly simulate the 2 bean options (coffee can returns array, does actions)
  */
 
-// add in name prompt??, variable is ready
-
 package coffeeBeans;
 
 import java.util.Scanner;
