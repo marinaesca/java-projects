@@ -93,7 +93,7 @@ public class CoffeeBeanCan
 	// returns a char with the colors of the beans drawn
 	public void drawBeans()
 	{
-		char[] draw = drawTwoBeans();
+		char[] draw = getTwoBeans();
 		char bean1 = draw[0];
 		char bean2 = draw[1];
 
@@ -114,7 +114,7 @@ public class CoffeeBeanCan
 	}
 
 	// b will be 0, w will be 1
-	public char[] drawTwoBeans()
+	private char[] getTwoBeans()
 	{
 		char[] draw = new char[2];
 
@@ -137,7 +137,7 @@ public class CoffeeBeanCan
 	// If the two beans are the same color, 
 	// then throw both of them away and add a new black bean. 
 	// translation: color subtract 2, black bean add 1
-	public void optionSameColor(char c)
+	private void optionSameColor(char c)
 	{
 		String color = "black";
 		if (c == 'b')
@@ -159,7 +159,7 @@ public class CoffeeBeanCan
 	// If the two beans are different colors, 
 	// then throw away the black one and return the white one to the can.
 	// translation: decrement 1 black bean
-	public void optionBothColor()
+	private void optionBothColor()
 	{
 		this.black -= 1;
 
@@ -168,7 +168,7 @@ public class CoffeeBeanCan
 		System.out.println("The white bean was returned to the can.");
 	}
 
-	public char[] setBeans()
+	private char[] setBeans()
 	{
 		int size = getBlack() + getWhite();
 		char[] temp = new char[size];
