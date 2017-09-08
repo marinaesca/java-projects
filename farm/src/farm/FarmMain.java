@@ -14,12 +14,14 @@ public class FarmMain {
 		Color sky = new Color(153, 204, 255);
 		p1.setBackground(sky);
 
-		createGrass(g, 0, 450, 1200, 600);
+		createGrass(g, 0, 1200, 450, 600);
 
 		createBees(g, 20);
+		
+		createLadyBugs(g, 1);
 	}
 
-	public static void createGrass(Graphics g, int startX, int startY, int endX, int endY) {
+	public static void createGrass(Graphics g, int startX, int endX, int startY, int endY) {
 		Color grass = new Color(0, 204, 102);
 		g.setColor(grass);
 		g.fillRect(startX, startY, endX, endY);
@@ -50,5 +52,10 @@ public class FarmMain {
 			int y = ran.nextInt(600);
 			bumble.draw(g, x, y, true);
 		}
+	}
+	
+	public static void createLadyBugs(Graphics g, int num) {
+		LadyBug bug = new LadyBug();
+		bug.draw(g, 150, 550);
 	}
 }

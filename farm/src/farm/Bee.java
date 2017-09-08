@@ -15,9 +15,7 @@ public class Bee extends Insect {
 		return Color.YELLOW;
 	}
 
-	public int numOfLegs() {
-		return 6;
-	}
+	// Default numLegs is 6
 
 	public String toString() {
 		return "Bzz Bzz";

@@ -13,7 +13,7 @@ public abstract class Insect {
 	}
 
 	public int numOfLegs() {
-		return 0;
+		return 6;
 	}
 
 	public String toString() {
