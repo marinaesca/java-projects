@@ -1,0 +1,82 @@
+100 TOP Striped  
+Black and white striped crop tank.
+101 TOP Blue  
+Navy blue crop tank. Thick trim.
+102 TOP Red  
+Maroon crop tank.
+103 TOP Black
+Black crop top.
+104 TOP Striped
+Red white and blue retro striped ringer tee. White trim.
+105 TOP Striped
+Red and navy retro striped ringer tee. Navy trim. 
+106 TOP Navy
+Navy constellation shirt.
+107 TOP Striped
+Navy and white striped shirt. Fitted. Banana Republic.
+108 TOP Navy
+Navy workout tank. Spaghetti straps.
+109 TOP Blue
+Blue hackTX shirt. Fitted.
+110 TOP Gray.
+Gray embroidered shirt. Embroidered red girl with teal dog. By Tia.
+111 TOP Black
+Black shirt. Fitted.
+112 TOP Black
+Black silky business top. Spaghetti straps. Intricate pattern on chest.
+113 TOP Yellow
+Mustard large plain shirt.
+114 TOP Pink
+Bubblegum pink large plain shirt. Pocket.
+115 TOP Green
+Deep faded green large plain shirt. Cotton on.
+116 TOP Navy
+Navy large shirt. Flowy. Bicylce club patch. @@TOP_AND_BOTTOM
+117 TOP Grey
+Beige silky long sleeve business shirt. Hidden buttons.
+118 TOP Pink
+Berry pink ivory ella long sleeve shirt. Elephant print on front. IVORY ELLA print on back.
+119 TOP Green
+Teal knitted chunky turtleneck sweater. Cable twisted pattern.
+120 TOP Black
+Black long sleeve Schlitterbahn shirt. Rainbow Schlitterbahn print on front and back.
+121 TOP Striped
+Light blue and white striped business shirt. Button down.
+122 TOP Pink
+Bright pink ivory ella long sleeve shirt. Elephant print on front and back.
+200 BOTTOM Black
+Black thin sweatpants. LOVE PINK print down right leg. Gift from Tia's cousin in Vietnam.
+201 BOTTOM Jean
+Skinny fit jeans. Target.
+202 BOTTOM Pattern
+Multicolor small flower pattern fabric pants. Custom made in Vietnam. Pockets.
+203 BOTTOM Black
+Black thick sweatpants. H&M.
+204 BOTTOM Black
+Black skinny fitted dress pants. The Limited.
+205 BOTTOM Grey
+Dark grey thick sweatpants. H&M.
+206 BOTTOM Black
+Black work out leggings. 3/4th length. Nike.
+207 BOTTOM Black
+Black soft stretch leggings. 
+208 BOTTOM Khaki
+Khaki skinny fitted dress pants. Small black smudge stain right leg. The Limited.
+209 BOTTOM Purple
+Purple and white accent workout shorts. Nike.
+210 BOTTOM White
+White with black accent and wording workout shorts. Cheer phrases pattern. Nike.
+211 BOTTOM Gray
+Dark gray silky pleated business shorts.
+212 BOTTOM Green
+Bright teal skater skirt. Paired with nike spanks.
+213 BOTTOM Jean
+Overalls. Jean skinny overalls. Large front pocket.
+300 TOP_AND_BOTTOM Striped
+Dress. Black white orange and pink striped dress. Ribbed and fitted.
+301 TOP_AND_BOTTOM Striped
+Dress. Royal blue stretch dress. Fitted on top, skater skirt on bottom.
+302 TOP_AND_BOTTOM Black
+Dress. Black fitted stretch dress. Slit at bottom for mobility. High neckline.
+303 TOP_AND_BOTTOM Navy
+Romper. Navy cinched waist romper. Pockets.
